@@ -18,6 +18,8 @@ All functions return 0 on failure, this goes for getting a value, always check 0
 
 main.c has a usage example, however the usage structure is like this:
 
+Writing back to the cfg file is NOT implemented.
+
 ````
 // allocate memory for the cfg structure
 struct cfgfile *cfg = malloc(sizeof(struct cfgfile));
