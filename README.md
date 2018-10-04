@@ -6,7 +6,7 @@ It's really hacky, I wouldn't really trust it for anything.
 
 Comments are ignored, they're denoted by the '#' character.
 
-Spaces are currently treated literally. ````test=123```` and test = 123```` are DIFFERENT, the key has a space appended and the value a space prepended in the second example.
+Spaces are currently treated literally. ````test=123```` and ````test = 123```` are DIFFERENT, the key has a space appended and the value a space prepended in the second example.
 
 Duplicate keys are not handled currently, the ````cfggetvalue```` function will only give you the first value.
 
