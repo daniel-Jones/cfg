@@ -16,9 +16,9 @@ To compile type ````make````. Run the example program by issuing ````./example``
 
 All functions return 0 on failure, this goes for getting a value, always check 0 isn't returned. If it is, that means the key was not found.
 
-main.c has a usage example, however the usage structure is like this:
-
 Writing back to the cfg file is NOT implemented.
+
+main.c has a usage example, however the usage structure is like this:
 
 ````
 // allocate memory for the cfg structure
