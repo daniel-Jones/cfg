@@ -39,3 +39,6 @@ else
 // free all of our memory (including cfg itself)
 cfgfree(cfg);
 ````
+
+Why didn't I use string.h functions to extract the key and value? 
+I did originally, but I scraped it because it was hacky, if I had any idea what I would end up using I would have kept it.
