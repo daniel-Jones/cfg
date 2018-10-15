@@ -42,7 +42,7 @@ int
 cfggetvalue(struct cfgfile *cfg, char *key, char *buffer, size_t buffersize);
 
 void
-appendchar(char *dest, char ch);
+cfgappendchar(char *dest, char ch);
 
 int
 readfile(struct cfgfile *cfg, FILE *fp);

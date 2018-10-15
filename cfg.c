@@ -78,7 +78,7 @@ cfggetvalue(struct cfgfile *cfg, char *key, char *buffer, size_t buffersize)
 }
 
 void
-appendchar(char *dest, char ch)
+cfgappendchar(char *dest, char ch)
 {
 	/*
 	 * appends char ch to dest
@@ -117,7 +117,7 @@ readfile(struct cfgfile *cfg, FILE *fp)
 				if (!buffer)
 					return 0;
 			}
-			appendchar(buffer, ch);
+			cfgappendchar(buffer, ch);
 			linesize += sizeof(char);
 		}
 		else
@@ -182,8 +182,8 @@ parseline(char *line, struct cfgfile *cfg)
 		int c = 0;
 		int doingkey = 1;
 		size_t keybufsize = 1;
-		size_t keysize = 30;
-		size_t valbufsize = 30;
+		size_t keysize = 255;
+		size_t valbufsize = 255;
 		size_t valsize = 0;
 		tmp->key = malloc(keybufsize);
 		tmp->value = malloc(valbufsize);
@@ -204,7 +204,7 @@ parseline(char *line, struct cfgfile *cfg)
 						if (!tmp->key)
 							return 0;
 					}
-					appendchar(tmp->key, ch);
+					cfgappendchar(tmp->key, ch);
 					valsize += sizeof(char);
 				}
 			}
@@ -217,7 +217,7 @@ parseline(char *line, struct cfgfile *cfg)
 					if (!tmp->value)
 						return 0;
 				}
-				appendchar(tmp->value, ch);
+				cfgappendchar(tmp->value, ch);
 				valsize += sizeof(char);
 			}
 			c++;
